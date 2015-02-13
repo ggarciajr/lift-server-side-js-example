@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <title>Home</title>
+  </head>
+<body class="lift:content_id=main">
+<div id="main" class="lift:surround?with=default;at=content">
+    <h2>Calling a js function defined in the server</h2>
+
+    <script data-lift="JsCommand.jsFunction"></script>
+    <script data-lift="JsCommand.loadData"></script>
+
+    <div>
+        <select id="person">
+            <option value="Carly">Carly</option>
+            <option value="Joe">Joe</option>
+            <option value="John">John</option>
+            <option value="Mary">Mary</option>
+        </select>
+
+        <button>Delete Selected</button>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("button").click(function () {
+                ajaxDeletePeople($("#person").val());
+            });
+        });
+    </script>
+</div>
+</body>
+</html>
+
